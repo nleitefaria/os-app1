@@ -3,6 +3,8 @@ package com.mycompany.osapp1.init;
 import java.util.HashSet;
 import java.util.Set;
 
+import com.mycompany.osapp1.rws.DepartmentsRWS;
+import com.mycompany.osapp1.rws.EmployeesRWS;
 import com.mycompany.osapp1.rws.HelloRWS;
 import com.mycompany.osapp1.rws.SalariesRWS;
 import com.mycompany.osapp1.rws.TitlesRWS;
@@ -17,6 +19,9 @@ public class RESTApplication extends javax.ws.rs.core.Application
 		singletons.add(new HelloRWS());
 		singletons.add(new TitlesRWS());
 		singletons.add(new SalariesRWS());
+		
+		singletons.add(new DepartmentsRWS());
+		singletons.add(new EmployeesRWS());
 	}
 
 	@Override
