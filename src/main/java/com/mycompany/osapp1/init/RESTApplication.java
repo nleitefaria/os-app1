@@ -18,8 +18,7 @@ public class RESTApplication extends javax.ws.rs.core.Application
 	{
 		singletons.add(new HelloRWS());
 		singletons.add(new TitlesRWS());
-		singletons.add(new SalariesRWS());
-		
+		singletons.add(new SalariesRWS());		
 		singletons.add(new DepartmentsRWS());
 		singletons.add(new EmployeesRWS());
 	}
