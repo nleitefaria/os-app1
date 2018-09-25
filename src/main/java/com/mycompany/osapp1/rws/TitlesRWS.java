@@ -17,7 +17,7 @@ public class TitlesRWS
 	public Response findAll()
 	{
 		TitleService titleService = new TitleServiceImpl(); 	
-		return Response.status(200).entity(titleService).build();	
+		return Response.status(200).entity(titleService.findAll()).build();	
 	}
 
 }
