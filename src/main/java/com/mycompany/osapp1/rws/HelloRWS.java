@@ -6,19 +6,14 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import com.mycompany.osapp1.domain.Product;
-
-@Path("/hello")
+@Path("/rest")
 public class HelloRWS 
 {
 	@GET
-	@Path("/hi")
+	@Path("/")
 	@Produces({MediaType.APPLICATION_JSON})
-	public Response count()
-	{	
-		Product product = new Product();
-		product.setName("iPad 3");
-		product.setQty(999);
-		return Response.status(200).entity(product).build();	
+	public Response sayHello()
+	{		
+		return Response.status(200).entity("Hello").build();	
 	}
 }
