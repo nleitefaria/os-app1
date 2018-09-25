@@ -11,13 +11,15 @@ import com.mycompany.osapp1.service.impl.TitleServiceImpl;
 @Path("/rest")
 public class TitlesRWS 
 {
+	private TitleService service;
+	
 	@GET
 	@Path("/titles")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findAll()
 	{
-		TitleService titleService = new TitleServiceImpl(); 	
-		return Response.status(200).entity(titleService.findAll()).build();	
+		service = new TitleServiceImpl(); 	
+		return Response.status(200).entity(service.findAll()).build();	
 	}
 
 }
