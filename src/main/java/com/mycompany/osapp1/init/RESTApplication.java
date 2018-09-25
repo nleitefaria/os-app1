@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import com.mycompany.osapp1.rws.HelloRWS;
+import com.mycompany.osapp1.rws.SalariesRWS;
 import com.mycompany.osapp1.rws.TitlesRWS;
 
 public class RESTApplication extends javax.ws.rs.core.Application 
@@ -15,6 +16,7 @@ public class RESTApplication extends javax.ws.rs.core.Application
 	{
 		singletons.add(new HelloRWS());
 		singletons.add(new TitlesRWS());
+		singletons.add(new SalariesRWS());
 	}
 
 	@Override
