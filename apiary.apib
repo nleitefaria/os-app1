@@ -1,39 +1,21 @@
 FORMAT: 1A
-HOST: http://os-app1-os-app1.193b.starter-ca-central-1.openshiftapps.com
+HOST: http://os-app1-os-app1.a3c1.starter-us-west-1.openshiftapps.com/rest
 
 # osapp1
 
-osapp1 is a RESTful API for the Employees sample MySQL Database.
+os-app1 is a RESTful API for the ClassicModels MySQL sample database.
 
-## Questions Collection [/questions]
+## Questions Collection [/customers]
 
-### List All Questions [GET]
+### List All Customers [GET]
 
 + Response 200 (application/json)
 
         [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
+            
         ]
 
-### Create a New Question [POST]
+### Create a New Customer [POST]
 
 You may create your own question using this action. It takes a JSON
 object containing a question and a collection of answers in the
@@ -42,13 +24,6 @@ form of choices.
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
         }
 
 + Response 201 (application/json)
@@ -60,21 +35,27 @@ form of choices.
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
             }
+            
+            
+## Questions Collection [/employees]
+
+### List All Employees [GET]
+
++ Response 200 (application/json)
+
+        [
+            
+        ]
+        
+
+
+## Questions Collection [/oficces]
+
+### List All Employees [GET]
+
++ Response 200 (application/json)
+
+        [
+            
+        ]
