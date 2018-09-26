@@ -46,7 +46,7 @@ public class RESTApplication extends javax.ws.rs.core.Application
 	    BeanConfig beanConfig = new BeanConfig();
 	    beanConfig.setVersion("1.0.0");
 	    beanConfig.setSchemes(new String[] { "http" });
-	    beanConfig.setHost("http://localhost:8080/osapp1-1.0");
+	    beanConfig.setHost("http://os-app1-os-app1.a3c1.starter-us-west-1.openshiftapps.com");
 	    beanConfig.setBasePath("/api");
 	    beanConfig.setResourcePackage("com.mycompany.osapp1.rws");
 	    beanConfig.setTitle("RESTEasy, ...");
