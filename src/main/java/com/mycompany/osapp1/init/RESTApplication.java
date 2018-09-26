@@ -17,7 +17,9 @@ public class RESTApplication extends javax.ws.rs.core.Application
 	private Set<Object> singletons = new HashSet<Object>();
 
 	public RESTApplication() 
-	{
+	{	
+		configureSwagger();
+		
 		singletons.add(new HelloRWS());
 		singletons.add(new TitlesRWS());
 		singletons.add(new SalariesRWS());		
@@ -32,4 +34,26 @@ public class RESTApplication extends javax.ws.rs.core.Application
 	public Set<Object> getSingletons() {
 		return singletons;
 	}
+	
+	
+	private void configureSwagger() 
+	{
+		
+		System.out.println("*****************");
+		System.out.println("@configureSwagger");
+		System.out.println("*****************");
+		
+	    BeanConfig beanConfig = new BeanConfig();
+	    beanConfig.setVersion("1.0.0");
+	    beanConfig.setSchemes(new String[] { "http" });
+	    beanConfig.setHost("http://localhost:8080/osapp1-1.0");
+	    beanConfig.setBasePath("/api");
+	    beanConfig.setResourcePackage("com.mycompany.osapp1.rws");
+	    beanConfig.setTitle("RESTEasy, ...");
+	    beanConfig.setDescription("Sample application to demonstrate ...");
+	    beanConfig.setScan(true);
+	  }
+	
+	
+	
 }

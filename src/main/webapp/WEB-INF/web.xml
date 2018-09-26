@@ -27,11 +27,6 @@
     </servlet-mapping>
     
     
-    <servlet>
-        <servlet-name>SwaggerBootstrap</servlet-name>
-        <servlet-class>com.mycompany.osapp1.init.Bootstrap</servlet-class>
-        <load-on-startup>2</load-on-startup>
-    </servlet>
     
     
     <filter>
