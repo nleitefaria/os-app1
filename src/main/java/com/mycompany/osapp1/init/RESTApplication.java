@@ -6,6 +6,7 @@ import java.util.Set;
 import com.mycompany.osapp1.rws.CustomersRWS;
 import com.mycompany.osapp1.rws.EmployeesRWS;
 import com.mycompany.osapp1.rws.HelloRWS;
+import com.mycompany.osapp1.rws.OfficesRWS;
 
 public class RESTApplication extends javax.ws.rs.core.Application 
 {
@@ -17,6 +18,7 @@ public class RESTApplication extends javax.ws.rs.core.Application
 		singletons.add(new HelloRWS());
 		singletons.add(new CustomersRWS());
 		singletons.add(new EmployeesRWS());
+		singletons.add(new OfficesRWS());
 	}
 
 	@Override
