@@ -26,6 +26,14 @@
         <url-pattern>/rest/*</url-pattern>
     </servlet-mapping>
     
+    
+    <servlet>
+        <servlet-name>SwaggerBootstrap</servlet-name>
+        <servlet-class>com.mycompany.osapp1.init.Bootstrap</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    
+    
     <filter>
     	<filter-name>CorsFilter</filter-name>
     	<filter-class>com.mycompany.osapp1.filter.CORSFilter</filter-class>
