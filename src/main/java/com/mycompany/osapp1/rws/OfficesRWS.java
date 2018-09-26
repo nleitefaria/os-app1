@@ -15,7 +15,7 @@ public class OfficesRWS
 	private OfficeService service;
 	
 	@GET
-	@Path("/customers")
+	@Path("/oficces")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findAll()
 	{
