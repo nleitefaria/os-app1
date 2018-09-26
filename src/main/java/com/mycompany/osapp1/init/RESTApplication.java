@@ -9,6 +9,8 @@ import com.mycompany.osapp1.rws.HelloRWS;
 import com.mycompany.osapp1.rws.SalariesRWS;
 import com.mycompany.osapp1.rws.TitlesRWS;
 
+import io.swagger.jaxrs.config.BeanConfig;
+
 public class RESTApplication extends javax.ws.rs.core.Application 
 {
 
@@ -16,6 +18,15 @@ public class RESTApplication extends javax.ws.rs.core.Application
 
 	public RESTApplication() 
 	{
+		BeanConfig beanConfig = new BeanConfig();
+        beanConfig.setVersion("1.0.2");
+        beanConfig.setSchemes(new String[]{"http"});
+        beanConfig.setHost("http://os-app1-os-app1.a3c1.starter-us-west-1.openshiftapps.com");
+        beanConfig.setBasePath("/api");
+        beanConfig.setResourcePackage("io.swagger.resources");
+        beanConfig.setScan(true);
+		
+		
 		singletons.add(new HelloRWS());
 		singletons.add(new TitlesRWS());
 		singletons.add(new SalariesRWS());		
