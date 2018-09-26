@@ -21,6 +21,9 @@ public class RESTApplication extends javax.ws.rs.core.Application
 		singletons.add(new SalariesRWS());		
 		singletons.add(new DepartmentsRWS());
 		singletons.add(new EmployeesRWS());
+		
+		singletons.add(io.swagger.jaxrs.listing.ApiListingResource.class);
+		singletons.add(io.swagger.jaxrs.listing.SwaggerSerializers.class);
 	}
 
 	@Override
