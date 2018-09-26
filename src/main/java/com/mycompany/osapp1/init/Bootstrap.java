@@ -18,6 +18,6 @@ public class Bootstrap extends HttpServlet
         beanConfig.setHost("http://os-app1-os-app1.a3c1.starter-us-west-1.openshiftapps.com");
         beanConfig.setBasePath("/api");
         beanConfig.setResourcePackage("io.swagger.resources");
-        beanConfig.setScan(true);
+        //beanConfig.setScan(true);
     }
 }
