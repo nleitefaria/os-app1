@@ -9,6 +9,7 @@ import com.mycompany.osapp1.rws.HelloRWS;
 import com.mycompany.osapp1.rws.OfficesRWS;
 import com.mycompany.osapp1.rws.OrderDetailsRWS;
 import com.mycompany.osapp1.rws.OrdersRWS;
+import com.mycompany.osapp1.rws.PaymentsRWS;
 
 public class RESTApplication extends javax.ws.rs.core.Application 
 {
@@ -22,6 +23,7 @@ public class RESTApplication extends javax.ws.rs.core.Application
 		singletons.add(new OfficesRWS());
 		singletons.add(new OrderDetailsRWS());
 		singletons.add(new OrdersRWS());
+		singletons.add(new PaymentsRWS());
 		
 		
 	}
