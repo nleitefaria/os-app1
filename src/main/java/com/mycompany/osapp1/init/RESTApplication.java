@@ -7,10 +7,11 @@ import com.mycompany.osapp1.rws.CustomersRWS;
 import com.mycompany.osapp1.rws.EmployeesRWS;
 import com.mycompany.osapp1.rws.HelloRWS;
 import com.mycompany.osapp1.rws.OfficesRWS;
+import com.mycompany.osapp1.rws.OrderDetailsRWS;
+import com.mycompany.osapp1.rws.OrdersRWS;
 
 public class RESTApplication extends javax.ws.rs.core.Application 
 {
-
 	private Set<Object> singletons = new HashSet<Object>();
 
 	public RESTApplication() 
@@ -19,16 +20,14 @@ public class RESTApplication extends javax.ws.rs.core.Application
 		singletons.add(new CustomersRWS());
 		singletons.add(new EmployeesRWS());
 		singletons.add(new OfficesRWS());
+		singletons.add(new OrderDetailsRWS());
+		singletons.add(new OrdersRWS());
+		
+		
 	}
 
 	@Override
 	public Set<Object> getSingletons() {
 		return singletons;
 	}
-	
-	
-	
-	
-	
-	
 }

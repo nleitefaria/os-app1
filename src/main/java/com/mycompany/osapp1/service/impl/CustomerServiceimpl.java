@@ -4,11 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mycompany.osapp1.domain.CustomerDTO;
-import com.mycompany.osapp1.domain.EmployeeDTO;
 import com.mycompany.osapp1.service.CustomerService;
 
-public class CustomerServiceimpl implements CustomerService {
-	
+public class CustomerServiceimpl implements CustomerService 
+{	
 	public List<CustomerDTO> findAll()
 	{
 		List<CustomerDTO> ret = new ArrayList<CustomerDTO>();
