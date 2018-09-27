@@ -15,7 +15,7 @@ public class ProductLineRWS
 	private ProductLineService service;
 	
 	@GET
-	@Path("/productline")
+	@Path("/productlines")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findAll()
 	{
