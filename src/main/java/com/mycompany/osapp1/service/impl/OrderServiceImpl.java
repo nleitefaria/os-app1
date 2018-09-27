@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.mycompany.osapp1.domain.OrderDTO;
-import com.mycompany.osapp1.service.OrdersService;
+import com.mycompany.osapp1.service.OrderService;
 
-public class OrdersServiceImpl implements OrdersService
+public class OrderServiceImpl implements OrderService
 {
 	public List<OrderDTO> findAll()
 	{

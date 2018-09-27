@@ -10,12 +10,12 @@ import com.mycompany.osapp1.service.OrderService;
 import com.mycompany.osapp1.service.impl.OrderServiceImpl;
 
 @Path("/rest")
-public class OrdersRWS 
-{
+public class ProductLineRWS 
+{	
 	private OrderService service;
 	
 	@GET
-	@Path("/orders")
+	@Path("/productline")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findAll()
 	{
