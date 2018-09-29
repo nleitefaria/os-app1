@@ -9,6 +9,7 @@ import javax.persistence.Persistence;
 import com.mycompany.osapp1.dao.OfficesDAO;
 import com.mycompany.osapp1.dao.impl.OfficesDAOImpl;
 import com.mycompany.osapp1.domain.OfficeDTO;
+import com.mycompany.osapp1.entity.Offices;
 import com.mycompany.osapp1.service.OfficeService;
 
 public class OfficeServiceimpl implements OfficeService
@@ -31,14 +32,12 @@ public class OfficeServiceimpl implements OfficeService
 	{
 		List<OfficeDTO> ret = new ArrayList<OfficeDTO>();
 		
-		OfficeDTO o1 = new OfficeDTO();
-		o1.setCountry("Portugal");
-		
-		OfficeDTO o2 = new OfficeDTO();
-		o2.setCountry("Spain");
-		
-		ret.add(o1);
-		ret.add(o2);
+		OfficeDTO officeDTO;
+		for(Offices o : dao.findOfficesEntities())
+		{
+			officeDTO = new OfficeDTO(o.getOfficeCode(), o.getCity(), o.getPhone(), o.getAddressLine1(), o.getAddressLine2(), o.getState(), o.getCountry(), o.getPostalCode(), o.getTerritory());
+			ret.add(officeDTO);
+		}
 		
 		return ret;
 	}
