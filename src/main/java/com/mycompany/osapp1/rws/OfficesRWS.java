@@ -15,6 +15,15 @@ public class OfficesRWS
 	private OfficeService service;
 	
 	@GET
+	@Path("/offices/count")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response count()
+	{
+		service = new OfficeServiceimpl();
+		return Response.status(200).entity(service.count()).build();
+	}
+	
+	@GET
 	@Path("/offices")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findAll()

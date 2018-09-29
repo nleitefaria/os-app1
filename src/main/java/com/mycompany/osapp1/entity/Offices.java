@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.myapp.osapp1.entity;
+package com.mycompany.osapp1.entity;
 
 import java.io.Serializable;
 import java.util.List;
