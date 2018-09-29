@@ -5,6 +5,7 @@
  */
 package com.mycompany.osapp1.dao.impl;
 
+import com.mycompany.osapp1.dao.OfficesDAO;
 import com.mycompany.osapp1.dao.impl.exceptions.IllegalOrphanException;
 import com.mycompany.osapp1.dao.impl.exceptions.NonexistentEntityException;
 import com.mycompany.osapp1.dao.impl.exceptions.PreexistingEntityException;
@@ -24,7 +25,7 @@ import javax.persistence.EntityManagerFactory;
  *
  * @author nleit_000
  */
-public class OfficesDAOImpl implements Serializable {
+public class OfficesDAOImpl implements OfficesDAO, Serializable {
 
     public OfficesDAOImpl(EntityManagerFactory emf) {
         this.emf = emf;

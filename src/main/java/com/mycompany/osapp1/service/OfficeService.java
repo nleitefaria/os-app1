@@ -6,6 +6,7 @@ import com.mycompany.osapp1.domain.OfficeDTO;
 
 public interface OfficeService 
 {
+	Integer count();
 	List<OfficeDTO> findAll();
 
 }
