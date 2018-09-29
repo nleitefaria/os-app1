@@ -1,4 +1,4 @@
-package com.myapp.osapp1.dao.impl.exceptions;
+package com.mycompany.osapp1.dao.impl.exceptions;
 
 public class NonexistentEntityException extends Exception {
     public NonexistentEntityException(String message, Throwable cause) {

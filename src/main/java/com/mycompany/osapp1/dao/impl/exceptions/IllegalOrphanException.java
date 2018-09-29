@@ -1,4 +1,4 @@
-package com.myapp.osapp1.dao.impl.exceptions;
+package com.mycompany.osapp1.dao.impl.exceptions;
 
 import java.util.ArrayList;
 import java.util.List;
