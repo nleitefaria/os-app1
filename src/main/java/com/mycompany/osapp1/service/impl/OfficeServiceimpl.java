@@ -41,5 +41,11 @@ public class OfficeServiceimpl implements OfficeService
 		
 		return ret;
 	}
-
+	
+	public OfficeDTO findOffices(String id)
+	{
+		Offices o = dao.findOffices(id);
+		return new OfficeDTO(o.getOfficeCode(), o.getCity(), o.getPhone(), o.getAddressLine1(), o.getAddressLine2(), o.getState(), o.getCountry(), o.getPostalCode(), o.getTerritory());		
+	}
+	
 }

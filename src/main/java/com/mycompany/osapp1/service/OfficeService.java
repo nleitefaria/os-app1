@@ -8,5 +8,6 @@ public interface OfficeService
 {
 	Integer count();
 	List<OfficeDTO> findAll();
+	OfficeDTO findOffices(String id);
 
 }

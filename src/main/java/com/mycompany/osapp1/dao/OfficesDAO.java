@@ -8,5 +8,6 @@ public interface OfficesDAO
 {
 	int getOfficesCount();
 	List<Offices> findOfficesEntities();
+	Offices findOffices(String id);
 
 }
