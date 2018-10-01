@@ -8,70 +8,44 @@ os-app1 is a RESTful API for the ClassicModels MySQL sample database.
 ---
 ## Customers Collection [/customers]
 ### List all Customers [GET]
-Retrieve a list of Customers.
-
 + Response 200 (application/json)
 
         [
-            
+            {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}   
         ]
 
 
-### Create a Customer [PUT]
+### Create a Customer [POST]
 + Request (application/json)
 
-        {
-            "fname": "Ram",
-            "lname": "Jadhav",
-            "email": "ram@email.com"
-        }
+        
+        {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
+       
 
 + Response 201 (application/json)
 
-        {
-            "id": 3,
-            "fname": "Ram",
-            "lname": "Jadhav",
-            "email": "ram@email.com"
-        }
+        {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
 
 ## Customer [/customers/{id}]
-A single Customer object with all its details
 
 + Parameters
-    + id (required, Number, `1`) ... Numeric `id` of the User to perform action with.
+    + id (required, String, `103`) ... `id` of the Customer to perform action with.
 
 ### Retrieve a Customer [GET]
 + Response 200 (application/json)
 
     + Body
 
-            {
-                "id": 1,
-                "fname": "Pandurang",
-                "lname": "Patil",
-                "email": "pandurang@email.com"
-            }
+            {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
 
-### Update a Customer [POST]
-Update customer details
+### Update a Customer [PUT]
 + Request (application/json)
 
-        {
-            "id": 1,
-            "fname": "Pandurang",
-            "lname": "Patil",
-            "email": "pandurangpatil@email.com"
-        }
+        {"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
 
 + Response 200 (application/json)
 
-        {
-            "id": 1,
-            "fname": "Pandurang",
-            "lname": "Patil",
-            "email": "pandurangpatil@email.com"
-        }
+        {"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
 
 ### Remove a Customer [DELETE]
 + Response 204
@@ -81,12 +55,11 @@ Update customer details
 
 ## Employees Collection [/employees]
 ### List all Employees [GET]
-Retrieve a list of Employees.
 
 + Response 200 (application/json)
 
         [
-            
+            {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
         ]
         
         
