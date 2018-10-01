@@ -5,9 +5,10 @@ HOST: http://os-app1-os-app1.193b.starter-ca-central-1.openshiftapps.com/rest/
 
 os-app1 is a RESTful API for the ClassicModels MySQL sample database.
 
+---
 ## Customers Collection [/customers]
-
-### List All Customers [GET]
+### List all Customers [GET]
+Retrieve a list of Customers.
 
 + Response 200 (application/json)
 
@@ -16,27 +17,64 @@ os-app1 is a RESTful API for the ClassicModels MySQL sample database.
         ]
 
 
-### Create a New Customer [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
+### Create a Customer [PUT]
 + Request (application/json)
 
         {
+            "fname": "Ram",
+            "lname": "Jadhav",
+            "email": "ram@email.com"
         }
 
 + Response 201 (application/json)
 
-    + Headers
+        {
+            "id": 3,
+            "fname": "Ram",
+            "lname": "Jadhav",
+            "email": "ram@email.com"
+        }
 
-            Location: /questions/2
+## Customer [/customers/{id}]
+A single Customer object with all its details
+
++ Parameters
+    + id (required, Number, `1`) ... Numeric `id` of the User to perform action with.
+
+### Retrieve a Customer [GET]
++ Response 200 (application/json)
 
     + Body
 
             {
+                "id": 1,
+                "fname": "Pandurang",
+                "lname": "Patil",
+                "email": "pandurang@email.com"
             }
+
+### Update a Customer [POST]
+Update customer details
++ Request (application/json)
+
+        {
+            "id": 1,
+            "fname": "Pandurang",
+            "lname": "Patil",
+            "email": "pandurangpatil@email.com"
+        }
+
++ Response 200 (application/json)
+
+        {
+            "id": 1,
+            "fname": "Pandurang",
+            "lname": "Patil",
+            "email": "pandurangpatil@email.com"
+        }
+
+### Remove a Customer [DELETE]
++ Response 204
             
             
 ## Employees Collection [/employees]
