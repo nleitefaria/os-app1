@@ -4,8 +4,10 @@ import java.util.List;
 
 import com.mycompany.osapp1.domain.OrderDTO;
 
-public interface OrderService {
-	
+public interface OrderService 
+{
+	Integer count();
 	List<OrderDTO> findAll();
+	OrderDTO findOrders(String id);
 
 }
