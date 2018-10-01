@@ -6,9 +6,9 @@ import java.util.List;
 import com.mycompany.osapp1.domain.EmployeeDTO;
 import com.mycompany.osapp1.service.EmployeeService;
 
-public class EmployeeServiceimpl implements EmployeeService
+public class EmployeeServiceImpl implements EmployeeService
 {
-	public EmployeeServiceimpl()
+	public EmployeeServiceImpl()
 	{
 	}
 	

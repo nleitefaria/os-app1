@@ -4,8 +4,10 @@ import java.util.List;
 
 import com.mycompany.osapp1.domain.CustomerDTO;
 
-public interface CustomerService {
-	
+public interface CustomerService 
+{
+	Integer count();
 	List<CustomerDTO> findAll();
+	CustomerDTO findCustomers(String id);
 
 }

@@ -12,12 +12,12 @@ import com.mycompany.osapp1.domain.OfficeDTO;
 import com.mycompany.osapp1.entity.Offices;
 import com.mycompany.osapp1.service.OfficeService;
 
-public class OfficeServiceimpl implements OfficeService
+public class OfficeServiceImpl implements OfficeService
 {
 	private EntityManagerFactory emf;
 	private OfficesDAO dao;
 	
-	public OfficeServiceimpl()
+	public OfficeServiceImpl()
 	{
 		emf = Persistence.createEntityManagerFactory("JavaApplicationClassicModelsPU"); 
 		dao = new OfficesDAOImpl(emf);		

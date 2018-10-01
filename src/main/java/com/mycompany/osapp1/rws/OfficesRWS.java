@@ -8,7 +8,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import com.mycompany.osapp1.domain.OfficeDTO;
 import com.mycompany.osapp1.service.OfficeService;
-import com.mycompany.osapp1.service.impl.OfficeServiceimpl;
+import com.mycompany.osapp1.service.impl.OfficeServiceImpl;
 
 @Path("/rest")
 public class OfficesRWS 
@@ -20,7 +20,7 @@ public class OfficesRWS
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response count()
 	{
-		service = new OfficeServiceimpl();
+		service = new OfficeServiceImpl();
 		return Response.status(200).entity(service.count()).build();
 	}
 	
@@ -29,7 +29,7 @@ public class OfficesRWS
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findAll()
 	{
-		service = new OfficeServiceimpl();
+		service = new OfficeServiceImpl();
 		return Response.status(200).entity(service.findAll()).build();
 	}
 	
@@ -38,7 +38,7 @@ public class OfficesRWS
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findOffices(@PathParam("id") String id)
 	{
-		service = new OfficeServiceimpl();
+		service = new OfficeServiceImpl();
 		OfficeDTO officeDTO = service.findOffices(id);
 		if(officeDTO != null)
 		{

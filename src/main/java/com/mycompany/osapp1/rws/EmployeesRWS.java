@@ -7,7 +7,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 import com.mycompany.osapp1.service.EmployeeService;
-import com.mycompany.osapp1.service.impl.EmployeeServiceimpl;
+import com.mycompany.osapp1.service.impl.EmployeeServiceImpl;
 
 @Path("/rest")
 public class EmployeesRWS
@@ -19,7 +19,7 @@ public class EmployeesRWS
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findAll()
 	{
-		service = new EmployeeServiceimpl();
+		service = new EmployeeServiceImpl();
 		return Response.status(200).entity(service.findAll()).build();
 	}
 
