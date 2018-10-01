@@ -6,6 +6,7 @@ import com.mycompany.osapp1.domain.EmployeeDTO;
 
 public interface EmployeeService 
 {
+	Integer count();
 	List<EmployeeDTO> findAll();
-
+	EmployeeDTO findEmployees(String id);
 }

@@ -9,9 +9,7 @@ import javax.persistence.Persistence;
 import com.mycompany.osapp1.dao.CustomersDAO;
 import com.mycompany.osapp1.dao.impl.CustomersDAOImpl;
 import com.mycompany.osapp1.domain.CustomerDTO;
-import com.mycompany.osapp1.domain.OfficeDTO;
 import com.mycompany.osapp1.entity.Customers;
-import com.mycompany.osapp1.entity.Offices;
 import com.mycompany.osapp1.service.CustomerService;
 
 public class CustomerServiceImpl implements CustomerService 

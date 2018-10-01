@@ -5,6 +5,7 @@
  */
 package com.mycompany.osapp1.dao.impl;
 
+import com.mycompany.osapp1.dao.EmployeesDAO;
 import com.mycompany.osapp1.dao.impl.exceptions.NonexistentEntityException;
 import com.mycompany.osapp1.dao.impl.exceptions.PreexistingEntityException;
 import java.io.Serializable;
@@ -24,7 +25,7 @@ import javax.persistence.EntityManagerFactory;
  *
  * @author nleit_000
  */
-public class EmployeesDAOImpl implements Serializable {
+public class EmployeesDAOImpl implements EmployeesDAO, Serializable {
 
     public EmployeesDAOImpl(EntityManagerFactory emf) {
         this.emf = emf;
