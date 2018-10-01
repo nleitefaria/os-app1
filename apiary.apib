@@ -62,7 +62,41 @@ os-app1 is a RESTful API for the ClassicModels MySQL sample database.
             {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
         ]
         
+### Create a Employee [POST]
++ Request (application/json)
+
         
+        {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
+       
+
++ Response 201 (application/json)
+
+        {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
+        
+
+## Employee [/employees/{id}]
+
++ Parameters
+    + id (required, String, `103`) ... `id` of the Customer to perform action with.
+
+### Retrieve a Employee [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
+
+### Update a Employee [PUT]
++ Request (application/json)
+
+        {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
+
++ Response 200 (application/json)
+
+        {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
+
+### Remove a Employee [DELETE]
++ Response 204
 
 
 ## Offices Collection [/offices]
