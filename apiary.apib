@@ -1,5 +1,5 @@
 FORMAT: 1A
-HOST: http://os-app1-os-app1.193b.starter-ca-central-1.openshiftapps.com/rest/
+HOST: https://os-app1-os-app1.193b.starter-ca-central-1.openshiftapps.com/rest/
 
 # osapp1
 
@@ -15,18 +15,20 @@ os-app1 is a RESTful API for the ClassicModels MySQL sample database.
         ]
 
 
+## Customer [/customer]
 ### Create a Customer [POST]
 + Request (application/json)
 
+        {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}   
         
-        {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
-       
 
 + Response 201 (application/json)
 
-        {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
+    + Body
 
-## Customer [/customers/{id}]
+            {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}   
+        
+## Customer [/customer/{id}]
 
 + Parameters
     + id (required, String, `103`) ... `id` of the Customer to perform action with.
@@ -36,43 +38,41 @@ os-app1 is a RESTful API for the ClassicModels MySQL sample database.
 
     + Body
 
-            {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
+            {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}   
 
 ### Update a Customer [PUT]
 + Request (application/json)
 
-        {"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
+        {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}   
 
 + Response 200 (application/json)
 
-        {"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}
+        {"customerNumber":103,"customerName":"Atelier graphique","contactLastName":"Schmitt","contactFirstName":"Carine ","phone":"40.32.2555","addressLine1":"54, rue Royale","addressLine2":null,"city":"Nantes","state":null,"postalCode":"44000","country":"France","creditLimit":21000.00}   
 
 ### Remove a Customer [DELETE]
 + Response 204
 
 
 
-
-## Employees Collection [/employees]
+## Employees Collection [/emoloyees]
 ### List all Employees [GET]
-
 + Response 200 (application/json)
 
         [
             {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
         ]
-        
+
+## Employee [/employee]
 ### Create a Employee [POST]
 + Request (application/json)
 
-        
         {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
-       
 
 + Response 201 (application/json)
 
-        {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
-        
+    + Body
+
+            {"employeeNumber":1002,"lastName":"Murphy","firstName":"Diane","extension":"x5800","email":"dmurphy@classicmodelcars.com","jobTitle":"President"}
 
 ## Employee [/employees/{id}]
 
@@ -101,7 +101,6 @@ os-app1 is a RESTful API for the ClassicModels MySQL sample database.
 
 ## Offices Collection [/offices]
 ### List all Offices [GET]
-Retrieve a list of Offices.
 
 + Response 200 (application/json)
 
@@ -109,21 +108,85 @@ Retrieve a list of Offices.
             
         ]
         
+### Create a Office [POST]
++ Request (application/json)
+
+        {}
+
++ Response 201 (application/json)
+
+        {}      
+
         
+## Office [/offices/{id}]
+
++ Parameters
+    + id (required, String, `103`) ... `id` of the Office to perform action with.
+
+### Retrieve a Office [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {} 
+            
+### Update a Office [PUT]
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {}
+
+### Remove a Office [DELETE]
++ Response 204        
+
+
 ## Orderdetails Collection [/orderdetails]
 ### List all Orderdetails [GET]
-Retrieve a list of orderdetails.
 
 + Response 200 (application/json)
 
         [
             
         ]
+
+### Create a Orderdetails [POST]
++ Request (application/json)
+
+        {}
+
++ Response 201 (application/json)
+
+        {}
         
+## Orderdetail [/orderdetails/{id}]
+
++ Parameters
+    + id (required, String, `103`) ... `id` of the Orderdetails to perform action with.
+
+### Retrieve a Orderdetail [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {}
+
+### Update a Orderdetail [PUT]
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {}
+        
+### Remove a Orderdetail [DELETE]
++ Response 204 
         
 ## Orders Collection [/orders]
 ### List all Orders [GET]
-Retrieve a list of Orders.
 
 + Response 200 (application/json)
 
@@ -131,10 +194,41 @@ Retrieve a list of Orders.
             
         ]
         
+### Create a Order [POST]
++ Request (application/json)
+
+        {}
+
++ Response 201 (application/json)
+
+        {}      
+        
+## Order [/orders/{id}]
+
++ Parameters
+    + id (required, String, `103`) ... `id` of the Order to perform action with.
+
+### Retrieve a Order [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {}
+
+### Update a Order [PUT]
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {}
+        
+### Remove a Order [DELETE]
++ Response 204
 
 ## Productlines Collection [/productlines]
 ### List all Productlines [GET]
-Retrieve a list of Productlines.
 
 + Response 200 (application/json)
 
@@ -142,13 +236,78 @@ Retrieve a list of Productlines.
             
         ]
         
+### Create a Productline [POST]
++ Request (application/json)
+
+        {}
+
++ Response 201 (application/json)
+
+        {}   
+        
+        
+## Productline [/productlines/{id}]
+
++ Parameters
+    + id (required, String, `103`) ... `id` of the Productline to perform action with.
+
+### Retrieve a Productline [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {}
+
+### Update a Productline [PUT]
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {}
+        
+### Remove a Productline [DELETE]
++ Response 204       
 
 ## Products Collection [/products]
 ### List all Products [GET]
-Retrieve a list of Products.
 
 + Response 200 (application/json)
 
         [
             
         ]
+        
+### Create a Product [POST]
++ Request (application/json)
+
+        {}
+
++ Response 201 (application/json)
+
+        {}  
+
+## Product [/products/{id}]
+
++ Parameters
+    + id (required, String, `103`) ... `id` of the Product to perform action with.
+
+### Retrieve a Product [GET]
++ Response 200 (application/json)
+
+    + Body
+
+            {}
+
+### Update a Product [PUT]
++ Request (application/json)
+
+        {}
+        
++ Response 200 (application/json)
+
+        {}
+        
+### Remove a Product [DELETE]
++ Response 204

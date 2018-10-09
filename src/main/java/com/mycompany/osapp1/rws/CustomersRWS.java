@@ -41,7 +41,7 @@ public class CustomersRWS
 	@GET
 	@Path("/customer/{id}")
 	@Produces({MediaType.APPLICATION_JSON})
-	public Response findOffices(@PathParam("id") String id)
+	public Response findOne(@PathParam("id") String id)
 	{
 		service = new CustomerServiceImpl();
 		CustomerDTO customerDTO = service.findCustomers(id);
