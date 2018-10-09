@@ -1,6 +1,7 @@
 package com.mycompany.osapp1.rws;
 
 import javax.ws.rs.Consumes;
+import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -75,6 +76,24 @@ public class CustomersRWS
 			return Response.status(500).entity("An error occured").build();	
 		}
 	}
+	
+	@DELETE
+	@Path("/customer/{id}")
+    @Produces("application/json")
+    public Response delete(@PathParam("id") String id)
+	{
+		service = new CustomerServiceImpl();
+        Integer ret = service.destroy(Integer.parseInt(id));
+
+        if (ret > 0) 
+        {
+            return Response.ok().status(Response.Status.NO_CONTENT).build();
+        } 
+        else 
+        {
+            return Response.notModified().build();
+        }
+    }
 	
 
 }

@@ -11,5 +11,5 @@ public interface CustomerService
 	List<CustomerDTO> findAll();
 	CustomerDTO findCustomers(String id);
 	CustomerDTO create(CustomerDTO customerDTO) throws PreexistingEntityException, Exception;
-
+	Integer destroy(Integer id);
 }

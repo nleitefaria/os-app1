@@ -8,6 +8,8 @@ import javax.persistence.Persistence;
 
 import com.mycompany.osapp1.dao.CustomersDAO;
 import com.mycompany.osapp1.dao.impl.CustomersDAOImpl;
+import com.mycompany.osapp1.dao.impl.exceptions.IllegalOrphanException;
+import com.mycompany.osapp1.dao.impl.exceptions.NonexistentEntityException;
 import com.mycompany.osapp1.dao.impl.exceptions.PreexistingEntityException;
 import com.mycompany.osapp1.domain.CustomerDTO;
 import com.mycompany.osapp1.entity.Customers;
@@ -57,5 +59,15 @@ public class CustomerServiceImpl implements CustomerService
 		return customerDTO;
 	}
 	
-
+	public Integer destroy(Integer id)
+	{
+		try {
+			dao.destroy(id);
+			return 1;
+		} catch (IllegalOrphanException e) {
+			return 0;
+		} catch (NonexistentEntityException e) {
+			return -1;
+		}
+	}
 }
