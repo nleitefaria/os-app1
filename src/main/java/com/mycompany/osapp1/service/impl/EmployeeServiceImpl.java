@@ -8,7 +8,6 @@ import javax.persistence.Persistence;
 
 import com.mycompany.osapp1.dao.EmployeesDAO;
 import com.mycompany.osapp1.dao.impl.EmployeesDAOImpl;
-import com.mycompany.osapp1.dao.impl.exceptions.IllegalOrphanException;
 import com.mycompany.osapp1.dao.impl.exceptions.NonexistentEntityException;
 import com.mycompany.osapp1.dao.impl.exceptions.PreexistingEntityException;
 import com.mycompany.osapp1.domain.EmployeeDTO;
