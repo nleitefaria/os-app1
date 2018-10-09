@@ -8,6 +8,7 @@ import javax.persistence.Persistence;
 
 import com.mycompany.osapp1.dao.CustomersDAO;
 import com.mycompany.osapp1.dao.impl.CustomersDAOImpl;
+import com.mycompany.osapp1.dao.impl.exceptions.PreexistingEntityException;
 import com.mycompany.osapp1.domain.CustomerDTO;
 import com.mycompany.osapp1.entity.Customers;
 import com.mycompany.osapp1.service.CustomerService;
@@ -47,6 +48,13 @@ public class CustomerServiceImpl implements CustomerService
 	{
 		Customers c = dao.findCustomers(Integer.parseInt(id));
 		return new CustomerDTO(c.getCustomerNumber(), c.getCustomerName(), c.getContactLastName(), c.getContactFirstName(), c.getPhone(), c.getAddressLine1(), c.getAddressLine2(), c.getCity(), c.getState(), c.getPostalCode(), c.getCountry(), c.getCreditLimit());		
+	}
+	
+	public CustomerDTO create(CustomerDTO customerDTO) throws PreexistingEntityException, Exception
+	{
+		Customers c = new Customers(customerDTO.getCustomerNumber(), customerDTO.getCustomerName(), customerDTO.getContactLastName(), customerDTO.getContactFirstName(), customerDTO.getPhone(), customerDTO.getAddressLine1(), customerDTO.getCity(), customerDTO.getCountry());
+		dao.create(c);
+		return customerDTO;
 	}
 	
 

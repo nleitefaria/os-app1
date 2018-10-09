@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import com.mycompany.osapp1.dao.impl.exceptions.PreexistingEntityException;
 import com.mycompany.osapp1.domain.CustomerDTO;
 import com.mycompany.osapp1.service.CustomerService;
 import com.mycompany.osapp1.service.impl.CustomerServiceImpl;
@@ -59,10 +60,20 @@ public class CustomersRWS
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response create(CustomerDTO customerDTO) 
 	{
-		System.out.println("*********************************");
-		System.out.println("@create Customer");
-		System.out.println("*********************************");
-		return Response.status(201).entity(customerDTO).build();	
+		service = new CustomerServiceImpl();
+		try 
+		{
+			service.create(customerDTO);
+			return Response.status(201).entity(customerDTO).build();	
+		} 
+		catch (PreexistingEntityException e) 
+		{
+			return Response.status(500).entity("An error occured").build();	
+		} 
+		catch (Exception e) 
+		{
+			return Response.status(500).entity("An error occured").build();	
+		}
 	}
 	
 
