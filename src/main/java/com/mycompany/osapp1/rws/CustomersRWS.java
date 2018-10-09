@@ -1,6 +1,8 @@
 package com.mycompany.osapp1.rws;
 
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -35,7 +37,7 @@ public class CustomersRWS
 	}
 	
 	@GET
-	@Path("/customers/{id}")
+	@Path("/customer/{id}")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findOffices(@PathParam("id") String id)
 	{
@@ -49,6 +51,18 @@ public class CustomersRWS
 		{
 			return Response.status(204).entity("No entity for id: " + id).build();
 		}	
+	}
+		
+	@POST
+	@Path("/customer")
+	@Consumes({MediaType.APPLICATION_JSON})
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response create(CustomerDTO customerDTO) 
+	{
+		System.out.println("*********************************");
+		System.out.println("@create Customer");
+		System.out.println("*********************************");
+		return Response.status(201).entity(customerDTO).build();	
 	}
 	
 
