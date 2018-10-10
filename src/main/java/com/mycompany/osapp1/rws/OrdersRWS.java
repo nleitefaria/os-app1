@@ -34,7 +34,7 @@ public class OrdersRWS
 	}
 	
 	@GET
-	@Path("/orders/{id}")
+	@Path("/order/{id}")
 	@Produces({MediaType.APPLICATION_JSON})
 	public Response findOffices(@PathParam("id") String id)
 	{
