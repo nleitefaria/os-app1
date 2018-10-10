@@ -6,6 +6,6 @@ import com.mycompany.osapp1.domain.OrderDetailDTO;
 
 public interface OrderDetailService 
 {
+	Integer count();
 	List<OrderDetailDTO> findAll();
-
 }

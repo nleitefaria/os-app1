@@ -15,7 +15,8 @@ import com.mycompany.osapp1.domain.OfficeDTO;
 import com.mycompany.osapp1.entity.Offices;
 import com.mycompany.osapp1.service.OfficeService;
 
-public class OfficeServiceImpl implements OfficeService {
+public class OfficeServiceImpl implements OfficeService 
+{
 	private EntityManagerFactory emf;
 	private OfficesDAO dao;
 
