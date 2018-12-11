@@ -11,10 +11,10 @@
     <class>com.mycompany.osapp1.entity.Payments</class>
     <class>com.mycompany.osapp1.entity.Orderdetails</class>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://sql7.freemysqlhosting.net:3306/sql7259037?zeroDateTimeBehavior=convertToNull"/>
-      <property name="javax.persistence.jdbc.user" value="sql7259037"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://10.130.66.95:3306/classicmodels?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="userBNV"/>
+      <property name="javax.persistence.jdbc.password" value="BcycKlSCXy2j5ADv"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-      <property name="javax.persistence.jdbc.password" value="PkS3pD7i2P"/>
     </properties>
   </persistence-unit>
 </persistence>
