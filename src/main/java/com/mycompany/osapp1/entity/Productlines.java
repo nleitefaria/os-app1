@@ -23,7 +23,7 @@ import javax.persistence.Table;
  * @author nleit_000
  */
 @Entity
-@Table(name = "productlines", catalog = "sql7259037", schema = "")
+@Table(name = "productlines", catalog = "", schema = "")
 @NamedQueries({
     @NamedQuery(name = "Productlines.findAll", query = "SELECT p FROM Productlines p")
     , @NamedQuery(name = "Productlines.findByProductLine", query = "SELECT p FROM Productlines p WHERE p.productLine = :productLine")

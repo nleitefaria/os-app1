@@ -25,7 +25,7 @@ import javax.persistence.TemporalType;
  * @author nleit_000
  */
 @Entity
-@Table(name = "payments", catalog = "sql7259037", schema = "")
+@Table(name = "payments", catalog = "", schema = "")
 @NamedQueries({
     @NamedQuery(name = "Payments.findAll", query = "SELECT p FROM Payments p")
     , @NamedQuery(name = "Payments.findByCustomerNumber", query = "SELECT p FROM Payments p WHERE p.paymentsPK.customerNumber = :customerNumber")
