@@ -37,6 +37,14 @@ public class CustomersRWS
 		service = new CustomerServiceImpl();
 		return Response.status(200).entity(service.findAll()).build();
 	}
+	@GET
+	@Path("/customers/{pageNum}")
+	@Produces({MediaType.APPLICATION_JSON})
+	public Response findCustomersPage(@PathParam("pageNum") Integer pageNum)
+	{
+		service = new CustomerServiceImpl();
+		return Response.status(200).entity(service.findCustomersPage(pageNum)).build();
+	}
 	
 	@GET
 	@Path("/customer/{id}")

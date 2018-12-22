@@ -12,6 +12,7 @@ import com.mycompany.osapp1.dao.impl.exceptions.IllegalOrphanException;
 import com.mycompany.osapp1.dao.impl.exceptions.NonexistentEntityException;
 import com.mycompany.osapp1.dao.impl.exceptions.PreexistingEntityException;
 import com.mycompany.osapp1.domain.CustomerDTO;
+import com.mycompany.osapp1.domain.CustomerPageDTO;
 import com.mycompany.osapp1.entity.Customers;
 import com.mycompany.osapp1.service.CustomerService;
 
@@ -50,6 +51,22 @@ public class CustomerServiceImpl implements CustomerService
 	{
 		Customers c = dao.findCustomers(Integer.parseInt(id));
 		return new CustomerDTO(c.getCustomerNumber(), c.getCustomerName(), c.getContactLastName(), c.getContactFirstName(), c.getPhone(), c.getAddressLine1(), c.getAddressLine2(), c.getCity(), c.getState(), c.getPostalCode(), c.getCountry(), c.getCreditLimit());		
+	}
+	
+	public CustomerPageDTO findCustomersPage(int pageNum)
+	{
+		CustomerPageDTO customerPageDTO;
+		
+		List<CustomerDTO> customerDTOList = new ArrayList<CustomerDTO>();
+		CustomerDTO customerDTO;
+		for(Customers c : dao.findCustomersEntities(10, pageNum * 10))
+		{
+			customerDTO = new CustomerDTO(c.getCustomerNumber(), c.getCustomerName(), c.getContactLastName(), c.getContactFirstName(), c.getPhone(), c.getAddressLine1(), c.getAddressLine2(), c.getCity(), c.getState(), c.getPostalCode(), c.getCountry(), c.getCreditLimit());
+			customerDTOList.add(customerDTO);
+		}		
+		customerPageDTO = new CustomerPageDTO(customerDTOList, dao.getCustomersCount());
+	
+		return customerPageDTO;
 	}
 	
 	public CustomerDTO create(CustomerDTO customerDTO) throws PreexistingEntityException, Exception

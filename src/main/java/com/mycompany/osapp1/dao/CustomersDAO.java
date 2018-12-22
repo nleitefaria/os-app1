@@ -11,6 +11,7 @@ public interface CustomersDAO
 {
 	int getCustomersCount();
 	List<Customers> findCustomersEntities();
+	List<Customers> findCustomersEntities(int maxResults, int firstResult);
 	Customers findCustomers(Integer id);
 	void create(Customers customers) throws PreexistingEntityException, Exception;
 	void destroy(Integer id) throws IllegalOrphanException, NonexistentEntityException;
